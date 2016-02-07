@@ -2,6 +2,7 @@ package com.android.myapplication;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
@@ -11,9 +12,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Deprecated
 public class PhotoHandler implements Camera.PictureCallback{
-
-    private String file;
 
     private final Context context;
 
@@ -31,8 +31,6 @@ public class PhotoHandler implements Camera.PictureCallback{
             FileOutputStream fos=new FileOutputStream(file);
             fos.write(data);
             fos.close();
-            camera.stopPreview();
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

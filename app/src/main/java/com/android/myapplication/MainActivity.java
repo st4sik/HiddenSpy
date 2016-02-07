@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         Intent myIntent = new Intent(this, PhotoServiceUpReciever.class);
         pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 789987, myIntent, 0);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-                System.currentTimeMillis(), 120000 ,pendingIntent);
+                System.currentTimeMillis(), 600000 ,pendingIntent);
 
     }
 
